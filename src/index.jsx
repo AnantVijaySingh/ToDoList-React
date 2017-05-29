@@ -1,9 +1,14 @@
+import 'react-mdl/extra/material.css';
+import 'react-mdl/extra/material.js';
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDom from 'react-dom';
+import { render } from 'react-dom';
+import { PageGrid } from './components/PageGrid.jsx';
+import { TaskTextField } from './components/TaskTextField.jsx';
 
 window.React = React;
 
 render(
-    <h1> Testing 1.. 2.. 3..</h1>,
+    <PageGrid />,
     document.getElementById("all-content")
 );
