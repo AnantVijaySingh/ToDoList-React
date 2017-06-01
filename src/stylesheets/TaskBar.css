@@ -1,0 +1,19 @@
+.taskBar {
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+#taskText {
+    width: 80%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.TaskBarButtons {
+    display: inline-block;
+    width: 20%;
+}

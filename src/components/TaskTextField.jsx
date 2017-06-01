@@ -3,16 +3,19 @@
  */
 import React from 'react';
 import { Textfield } from 'react-mdl';
+import '../stylesheets/TaskBar.css';
 
 
 export class TaskTextField extends React.Component {
     render() {
         return (
-            <Textfield
-                onChange={() => {}}
-                label="Text..."
-                style={{width: '200px'}}
-            />
+            <div id="taskText">
+                <Textfield
+                    onChange={() => {}}
+                    label="Text..."
+                    style={{width: '100%'}}
+                />
+            </div>
         )
     }
 }
