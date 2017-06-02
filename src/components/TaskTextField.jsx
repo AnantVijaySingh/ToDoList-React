@@ -11,6 +11,7 @@ export class TaskTextField extends React.Component {
         return (
             <div id="taskText">
                 <Textfield
+                    id="textField"
                     onChange={() => {}}
                     label="Text..."
                     style={{width: '100%'}}

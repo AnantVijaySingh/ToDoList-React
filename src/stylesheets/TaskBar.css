@@ -4,7 +4,6 @@
     text-align: center;
     align-items: center;
     align-content: center;
-
 }
 
 #taskText {
@@ -17,3 +16,12 @@
     display: inline-block;
     width: 20%;
 }
+
+/* .mdl-textfield__input .mdl-js-textfield .is-upgraded .is-focused {*/
+    /*background-color: #FF502D;*/
+/*}*/
+
+/*#textField.mdl-textfield__input:focus {*/
+    /*border-bottom-color: orangered;*/
+    /*!*box-shadow: 0 1px 0 0 orangered;*!*/
+/*}*/

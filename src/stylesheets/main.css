@@ -1,0 +1,18 @@
+.headerGrid {
+    /*background: linear-gradient(45deg, #FF502D, #FD3740, #D30B68);*/
+    /*border-bottom: solid;*/
+    /*border-bottom-width: 5px;*/
+    /*border-image: linear-gradinet(#FF502D, #FD3740, #D30B68) 10;*/
+    /*border-bottom: 5px solid;*/
+    /*border-image: linear-gradient(#FF502D, #FD3740, #D30B68) 5;*/
+    height: 4em;
+    align-items: center;
+}
+
+.title {
+    color: #400090;
+    font-size: 3em;
+    font-family: Roboto, sans-serif;
+    font-weight: 800;
+    text-align: center;
+}
