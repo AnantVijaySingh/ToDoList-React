@@ -1,5 +1,5 @@
 /**
- * Created by anant on 29/05/2017.
+ * Task text field has been moved to Task bar to help capture the data from the task bar
  */
 import React from 'react';
 import { Textfield } from 'react-mdl';
@@ -12,7 +12,8 @@ export class TaskTextField extends React.Component {
             <div id="taskText">
                 <Textfield
                     id="textField"
-                    onChange={() => {}}
+                    value={this.state.value}
+                    onChange={this.handleChange}
                     label="Text..."
                     style={{width: '100%'}}
                 />
