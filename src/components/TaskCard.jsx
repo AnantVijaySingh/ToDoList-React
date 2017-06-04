@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton} from 'react-mdl';
 import '../stylesheets/TaskCards.css'
 
@@ -7,10 +8,10 @@ export class TaskCard extends React.Component {
         return (
             <Card className="cards" shadow={0}>
                 <div className="taskText-card">
-                    Test task: Send emails to marketing departments informing them about the new product features.
+                    {this.props.text}
                 </div>
                 <CardActions border>
-                    <span>TimeStamp</span>
+                    <span>{this.props.timeStamp}</span>
                     <span style={{float: 'right'}}>
                         <IconButton name="delete" />
                         <IconButton name="priority_high" />
@@ -21,3 +22,17 @@ export class TaskCard extends React.Component {
         )
     }
 }
+
+TaskCard.propTypes = {
+    text: PropTypes.string.isRequired,
+    timeStamp: PropTypes.number.isRequired,
+    status: PropTypes.string.isRequired,
+    priority: PropTypes.bool.isRequired
+};
+
+TaskCard.defaultProps = {
+    text: "Task text for testing",
+    timeStamp: Date.now(),
+    status: "backlog",
+    priority: false
+};

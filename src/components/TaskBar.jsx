@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, IconButton } from 'react-mdl';
 import { Textfield } from 'react-mdl';
 import '../stylesheets/TaskBar.css';
@@ -15,7 +16,8 @@ export class TaskBar extends React.Component {
     }
 
     createBacklogTaskCard() {
-        alert('A name was submitted: ' + this.state.value);
+        // alert('A name was submitted: ' + this.state.value);
+        this.props.getTaskText(this.state);
     }
 
     handleChange(event) {
@@ -42,3 +44,7 @@ export class TaskBar extends React.Component {
         )
     }
 }
+
+TaskBar.propTypes = {
+    getTaskText: PropTypes.func
+};
