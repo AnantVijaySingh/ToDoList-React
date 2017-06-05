@@ -3,8 +3,9 @@ import { Grid, Cell } from 'react-mdl';
 import {TaskBar} from './TaskBar.jsx';
 import '../stylesheets/main.css';
 import {TaskCard} from "./TaskCard.jsx";
+import { BacklogColumn } from "./BacklogColumn.jsx";
 
-var backlogArray = [{a:1},{b:2},{c:3}];
+var backlogArray = [{taskText:"Testing", taskTimeStamp:1231231243523452, taskStatus:"backlog", taskPriority:false}];
 var todoArray = [];
 var doneArray = [];
 
@@ -14,6 +15,8 @@ export class PageGrid extends React.Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
+
+        console.log(backlogArray);
 
         // This binding is necessary to make `this` work in the callback
         this.createBacklogTaskCard = this.createBacklogTaskCard.bind(this);
@@ -50,18 +53,19 @@ export class PageGrid extends React.Component {
                 <Grid className="taskCardGrid">
                     <Cell col={4}>
                         <div id="backlogColumn">
-                            Backlog
+                            <span>Backlog</span>
+                            <BacklogColumn array={backlogArray} />
                             <TaskCard/>
                         </div>
                     </Cell>
                     <Cell col={4}>
                         <div id="todoColumn">
-                            To Do
+                            <span>To Do</span>
                         </div>
                     </Cell>
                     <Cell col={4}>
                         <div id="doneColumn">
-                            Done
+                            <span>Done</span>
                         </div>
                     </Cell>
                 </Grid>
