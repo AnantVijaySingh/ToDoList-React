@@ -5,7 +5,8 @@ import '../stylesheets/main.css';
 import {TaskCard} from "./TaskCard.jsx";
 import { BacklogColumn } from "./BacklogColumn.jsx";
 
-var backlogArray = [{id:1, name:"a"},{id:2, name:"b"}];
+var backlogArray = [{taskTimeStamp:1, taskText:"Testing", taskStatus:"backlog", taskPriority:false},
+    {taskTimeStamp:2, taskText:"Testing 2", taskStatus:"backlog", taskPriority:false}];
 var todoArray = [];
 var doneArray = [];
 
@@ -16,7 +17,7 @@ export class PageGrid extends React.Component {
         super(props);
         this.state = {value: ''};
 
-        console.log(backlogArray);
+        // console.log(backlogArray);
 
         // This binding is necessary to make `this` work in the callback
         this.createBacklogTaskCard = this.createBacklogTaskCard.bind(this);
