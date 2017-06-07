@@ -5,7 +5,7 @@ import '../stylesheets/main.css';
 import {TaskCard} from "./TaskCard.jsx";
 import { BacklogColumn } from "./BacklogColumn.jsx";
 
-var backlogArray = [{taskText:"Testing", taskTimeStamp:1231231243523452, taskStatus:"backlog", taskPriority:false}];
+var backlogArray = [{id:1, name:"a"},{id:2, name:"b"}];
 var todoArray = [];
 var doneArray = [];
 
@@ -55,7 +55,7 @@ export class PageGrid extends React.Component {
                         <div id="backlogColumn">
                             <span>Backlog</span>
                             <BacklogColumn array={backlogArray} />
-                            <TaskCard/>
+
                         </div>
                     </Cell>
                     <Cell col={4}>
