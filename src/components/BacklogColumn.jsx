@@ -1,8 +1,8 @@
 import React from 'react';
 import {} from 'react-mdl';
-import TaskCard from './TaskCard.jsx';
+import { TaskCard } from './TaskCard.jsx';
 
- var cardArray;
+var cardArray;
 var testArray = [{id:1, name:"a"},{id:2, name:"b"}];
 
 export class BacklogColumn extends React.Component {
@@ -20,7 +20,10 @@ export class BacklogColumn extends React.Component {
         return (
             <div>
                 {cardArray.map((unique) =>
-                <p key={unique.taskTimeStamp}>{unique.taskText}</p>
+                    <TaskCard key={unique.taskTimeStamp} />
+                )}
+                {cardArray.map((unique) =>
+                    <p key={unique.taskTimeStamp}>{unique.taskText}{unique.taskStatus}{unique.taskTimeStamp}</p>
                 )}
                 {testArray.map((unique) =>
                     <p key={unique.id}>{unique.name}</p>
