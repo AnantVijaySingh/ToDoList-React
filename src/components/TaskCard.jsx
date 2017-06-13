@@ -11,7 +11,7 @@ export class TaskCard extends React.Component {
                     {this.props.text}
                 </div>
                 <CardActions border>
-                    <span>{this.props.timeStamp}</span>
+                    <span>{this.props.timeStamp.toLocaleTimeString()}</span>
                     <span style={{float: 'right'}}>
                         <IconButton name="delete" />
                         <IconButton name="priority_high" />
@@ -25,14 +25,14 @@ export class TaskCard extends React.Component {
 
 TaskCard.propTypes = {
     text: PropTypes.string.isRequired,
-    timeStamp: PropTypes.number.isRequired,
+    timeStamp: PropTypes.instanceOf(Date).isRequired,
     status: PropTypes.string.isRequired,
     priority: PropTypes.bool.isRequired
 };
 
 TaskCard.defaultProps = {
     text: "Task text for testing",
-    timeStamp: Date.now(),
+    timeStamp: new Date(),
     status: "backlog",
     priority: false
 };
