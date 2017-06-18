@@ -5,22 +5,26 @@ import '../stylesheets/main.css';
 import {TaskCard} from "./TaskCard.jsx";
 import { BacklogColumn } from "./BacklogColumn.jsx";
 
-var backlogArray = [{taskTimeStamp:1, taskText:"Testing", taskStatus:"backlog", taskPriority:false},
-    {taskTimeStamp:2, taskText:"Testing 2", taskStatus:"backlog", taskPriority:false}];
-var todoArray = [];
-var doneArray = [];
-
+// var backlogArray = [];
+// var todoArray = [];
+// var doneArray = [];
 
 
 export class PageGrid extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+            value: '',
+            backlogArray: [{taskTimeStamp:1, taskText:"Testing", taskStatus:"backlog", taskPriority:false},
+                {taskTimeStamp:2, taskText:"Testing 2", taskStatus:"backlog", taskPriority:false}],
+            todoArray: [],
+            doneArray: []
+        };
 
         // console.log(backlogArray);
 
         // This binding is necessary to make `this` work in the callback
-        this.createBacklogTaskCard = this.createBacklogTaskCard.bind(this);
+        // this.createBacklogTaskCard = this.createBacklogTaskCard.bind(this);
         this.processTaskText = this.processTaskText.bind(this);
     }
 
@@ -29,16 +33,19 @@ export class PageGrid extends React.Component {
     }
 
     processTaskText(task) {
-        alert('It worked: ' + task.value);
         var backlogTask = {
             taskText:task.value,
             taskTimeStamp:Date.now(),
             taskStatus:"backlog",
             taskPriority:false
         };
-        backlogArray.push(backlogTask);
+        this.setState(
+            {
+                backlogArray: [...backlogTask]
+            }
+        );
+        console.log(backlogArray);
     }
-
 
     render () {
         return (
@@ -55,8 +62,9 @@ export class PageGrid extends React.Component {
                     <Cell col={4}>
                         <div id="backlogColumn">
                             <span>Backlog</span>
-                            <BacklogColumn array={backlogArray} />
-
+                            {
+                                <BacklogColumn array={this.state.backlogArray} />
+                            }
                         </div>
                     </Cell>
                     <Cell col={4}>
