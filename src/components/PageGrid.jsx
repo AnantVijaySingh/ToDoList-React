@@ -5,9 +5,10 @@ import '../stylesheets/main.css';
 import {TaskCard} from "./TaskCard.jsx";
 import { BacklogColumn } from "./BacklogColumn.jsx";
 
-// var backlogArray = [];
-// var todoArray = [];
-// var doneArray = [];
+var backlogData = [{taskTimeStamp:1, taskText:"Testing", taskStatus:"backlog", taskPriority:false},
+    {taskTimeStamp:2, taskText:"Testing 2", taskStatus:"backlog", taskPriority:false}];
+var todoData = [];
+var doneData = [];
 
 
 export class PageGrid extends React.Component {
@@ -15,10 +16,9 @@ export class PageGrid extends React.Component {
         super(props);
         this.state = {
             value: '',
-            backlogArray: [{taskTimeStamp:1, taskText:"Testing", taskStatus:"backlog", taskPriority:false},
-                {taskTimeStamp:2, taskText:"Testing 2", taskStatus:"backlog", taskPriority:false}],
-            todoArray: [],
-            doneArray: []
+            backlogArray: backlogData,
+            todoArray: todoData,
+            doneArray: doneData
         };
 
         // console.log(backlogArray);
@@ -39,12 +39,15 @@ export class PageGrid extends React.Component {
             taskStatus:"backlog",
             taskPriority:false
         };
+        backlogData.push(backlogTask);
+        console.log(backlogData);
         this.setState(
             {
-                backlogArray: [...backlogTask]
+                backlogArray: backlogData
             }
         );
-        console.log(backlogArray);
+        console.log('Updated Array PageGrid');
+        console.log(this.state.backlogArray);
     }
 
     render () {
