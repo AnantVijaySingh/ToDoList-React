@@ -12,7 +12,19 @@
 .title {
     color: #400090;
     font-size: 3em;
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 800;
     text-align: center;
+}
+
+.TaskColumnHeading {
+    color: #484848;
+    font-size: 1.2em;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    border-top: solid;
+    border-top-color: #484848;
+    border-top-width: medium;
+    padding-top: 0.5em;
 }

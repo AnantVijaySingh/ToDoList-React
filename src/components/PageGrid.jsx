@@ -5,8 +5,7 @@ import '../stylesheets/main.css';
 import {TaskCard} from "./TaskCard.jsx";
 import { BacklogColumn } from "./BacklogColumn.jsx";
 
-var backlogData = [{taskTimeStamp:1, taskText:"Testing", taskStatus:"backlog", taskPriority:false},
-    {taskTimeStamp:2, taskText:"Testing 2", taskStatus:"backlog", taskPriority:false}];
+var backlogData = [];
 var todoData = [];
 var doneData = [];
 
@@ -35,7 +34,7 @@ export class PageGrid extends React.Component {
     processTaskText(task) {
         var backlogTask = {
             taskText:task.value,
-            taskTimeStamp:Date.now(),
+            taskTimeStamp:new Date(),
             taskStatus:"backlog",
             taskPriority:false
         };
@@ -63,7 +62,7 @@ export class PageGrid extends React.Component {
                 </Grid>
                 <Grid className="taskCardGrid">
                     <Cell col={4}>
-                        <div id="backlogColumn">
+                        <div className="TaskColumnHeading" id="backlogColumn">
                             <span>Backlog</span>
                             {
                                 <BacklogColumn array={this.state.backlogArray} />
@@ -71,12 +70,12 @@ export class PageGrid extends React.Component {
                         </div>
                     </Cell>
                     <Cell col={4}>
-                        <div id="todoColumn">
+                        <div className="TaskColumnHeading" id="todoColumn">
                             <span>To Do</span>
                         </div>
                     </Cell>
                     <Cell col={4}>
-                        <div id="doneColumn">
+                        <div className="TaskColumnHeading" id="doneColumn">
                             <span>Done</span>
                         </div>
                     </Cell>

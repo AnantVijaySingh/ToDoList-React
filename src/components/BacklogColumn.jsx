@@ -23,7 +23,7 @@ export class BacklogColumn extends React.Component {
         return (
             <div>
                 {this.state.cardArray.map((unique) =>
-                    <TaskCard key={unique.taskTimeStamp} text={unique.taskText} />
+                    <TaskCard key={unique.taskTimeStamp} text={unique.taskText} timeStamp={unique.taskTimeStamp} priority={unique.taskPriority} />
                 )}
             </div>
         )
