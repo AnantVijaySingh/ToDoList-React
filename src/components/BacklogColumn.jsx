@@ -11,6 +11,7 @@ export class BacklogColumn extends React.Component {
         super(props);
         this.state = {cardArray: this.props.array};
 
+        this.processUserAction = this.processUserAction.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -19,11 +20,15 @@ export class BacklogColumn extends React.Component {
         this.setState({ cardArray: [...this.props.array] });
     }
 
+    processUserAction(action) {
+        console.log(action);
+    }
+
     render() {
         return (
             <div>
                 {this.state.cardArray.map((unique) =>
-                    <TaskCard key={unique.taskTimeStamp} text={unique.taskText} timeStamp={unique.taskTimeStamp} priority={unique.taskPriority} />
+                    <TaskCard key={unique.taskTimeStamp} text={unique.taskText} timeStamp={unique.taskTimeStamp} priority={unique.taskPriority} userAction={this.processUserAction} />
                 )}
             </div>
         )
