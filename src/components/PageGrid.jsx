@@ -4,6 +4,7 @@ import {TaskBar} from './TaskBar.jsx';
 import '../stylesheets/main.css';
 import {TaskCard} from "./TaskCard.jsx";
 import { BacklogColumn } from "./BacklogColumn.jsx";
+import { ToDoColumn } from "./ToDoColumn.jsx";
 
 var backlogData = [];
 var todoData = [];
@@ -49,6 +50,17 @@ export class PageGrid extends React.Component {
         console.log(this.state.backlogArray);
     }
 
+
+    // function to change the column of a tack card
+    // need either the card info to create a new card altogether of simply get the key to pick the card from the map
+    // another approach can be to use just one map and iterate and render though it depending upon the column key value
+    // currently the state does not update on the first click but from the second
+
+    changeColumn(nextColumn) {
+        console.log('check working');
+        console.log(nextColumn);
+    }
+
     render () {
         return (
             <div style={{width: '100%', margin: 'auto'}}>
@@ -65,13 +77,16 @@ export class PageGrid extends React.Component {
                         <div className="TaskColumnHeading" id="backlogColumn">
                             <span>Backlog</span>
                             {
-                                <BacklogColumn array={this.state.backlogArray} />
+                                <BacklogColumn array={this.state.backlogArray} changeColumnStatus={this.changeColumn} />
                             }
                         </div>
                     </Cell>
                     <Cell col={4}>
                         <div className="TaskColumnHeading" id="todoColumn">
                             <span>To Do</span>
+                            {
+                                <ToDoColumn array={this.state.todoArray} />
+                            }
                         </div>
                     </Cell>
                     <Cell col={4}>

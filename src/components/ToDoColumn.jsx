@@ -5,14 +5,11 @@ import { TaskCard } from './TaskCard.jsx';
 
 var cardArray;
 
-export class BacklogColumn extends React.Component {
+export class ToDoColumn extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            cardArray: this.props.array,
-            nextColumn: ''
-        };
+        this.state = {cardArray: this.props.array};
 
         this.processUserAction = this.processUserAction.bind(this);
     }
@@ -22,17 +19,9 @@ export class BacklogColumn extends React.Component {
         console.log(this.props.array);
         this.setState({ cardArray: [...this.props.array] });
     }
-    // Sends which column the card needs to be sent to
-    // need to send key to ensure that the correct object is modified in the map
+
     processUserAction(action) {
-        if(action==='toDoColumn') {
-            this.setState(
-                {
-                    nextColumn: 'next'
-                }
-            )
-            this.props.changeColumnStatus(this.state.nextColumn);
-        }
+        console.log(action);
     }
 
     render() {
@@ -45,7 +34,3 @@ export class BacklogColumn extends React.Component {
         )
     }
 }
-
-BacklogColumn.propTypes = {
-    changeColumnStatus: PropTypes.func
-};
